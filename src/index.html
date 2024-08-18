@@ -1,0 +1,11 @@
+---
+layout: layouts/index.html 
+title: die biografen. ein ensemble.
+---
+
+{% for play in collections.play %}
+<div class="grid-item item{{play.data.number}}">
+    <h2><a href="{{ play.url }}"> {{play.data.title}} </a></h2>
+    <img src="{{ play.flyer }}"/>
+</div>
+{% endfor %}

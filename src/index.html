@@ -3,7 +3,7 @@ layout: layouts/index.html
 title: die biografen. ein ensemble.
 ---
 
-{% for play in collections.play %}
+{% for play in collections.play | sort: "play.data.number" %}
 <div class="item item{{play.data.number}}">
     <div class="play-image">    
         <figure>
@@ -13,8 +13,11 @@ title: die biografen. ein ensemble.
     </div>
 
     <div class="play-text">
-        <h2><a href="{{ play.url }}"> {{play.data.title}} </a></h2>
-        <p>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund! « sagte er, es war, als sollte die Scham ihn überleben.</p>
+        <h2> {{play.data.title}}</h2>
+        <p>
+            {{play.data.teaser}}
+        </p>
+        <a href="{{ play.url }}" class="button">Weiter</a>
     </div>
 </div>
 {% endfor %}

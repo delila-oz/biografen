@@ -4,8 +4,17 @@ title: die biografen. ein ensemble.
 ---
 
 {% for play in collections.play %}
-<div class="grid-item item{{play.data.number}}">
-    <h2><a href="{{ play.url }}"> {{play.data.title}} </a></h2>
-    <img src="{{ play.flyer }}"/>
+<div class="item item{{play.data.number}}">
+    <div class="play-image">    
+        <figure>
+        <!-- <img src="{{ play.flyer }}"/> -->
+         <img src="https://images.unsplash.com/photo-1742750989574-3412f440a0c4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+        </figure>
+    </div>
+
+    <div class="play-text">
+        <h2><a href="{{ play.url }}"> {{play.data.title}} </a></h2>
+        <p>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund! « sagte er, es war, als sollte die Scham ihn überleben.</p>
+    </div>
 </div>
 {% endfor %}
